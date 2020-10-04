@@ -2,8 +2,15 @@ import React, { Component } from 'react';
 import { FormGroup, FormControl, InputGroup, Button } from 'react-bootstrap';
 
 class Global extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            query: ''
+        }
+    }
+
     search() {
-        console.log('search');
+        console.log('search', this.state.query);
     }
 
     render() {
@@ -16,6 +23,12 @@ class Global extends Component {
                         placeholder="Search Book's Title"
                         aria-label="Search Book's Title"
                         aria-describedby="basic-addon2"
+                        onChange={event => this.setState({query: event.target.value})}
+                        onKeyPress={event => {
+                            if (event.key === 'Enter'){
+                                this.search();
+                            }
+                        }}
                     />
                     <InputGroup.Append onClick={() => this.search()}>
                         <Button variant="outline-secondary" >Search</Button>
