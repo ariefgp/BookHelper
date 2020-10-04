@@ -15,10 +15,10 @@ class Global extends Component {
 
     render() {
         return (
-            <div>
+            <div className="global">
                 <h2>Book Explorer!</h2>
                 <FormGroup>
-                <InputGroup className="mb-3">
+                <InputGroup className="mb-3 search-bar">
                     <FormControl
                         placeholder="Search Book's Title"
                         aria-label="Search Book's Title"
